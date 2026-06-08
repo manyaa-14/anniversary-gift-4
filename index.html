@@ -1,0 +1,279 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy 2 years!! ❤️</title>
+
+<style>
+body{
+margin:0;
+padding:0;
+font-family:'Poppins',sans-serif;
+background:linear-gradient(135deg,#ffdde1,#ee9ca7);
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+text-align:center;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:25px;
+width:90%;
+max-width:700px;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+animation:fade 0.8s;
+}
+
+.hidden{
+display:none;
+}
+
+h1{
+color:#ff4d6d;
+}
+
+button{
+padding:12px 25px;
+border:none;
+border-radius:30px;
+background:#ff4d6d;
+color:white;
+font-size:16px;
+cursor:pointer;
+margin-top:20px;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+.letter{
+text-align:left;
+line-height:1.8;
+white-space:pre-line;
+}
+
+.hearts{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:15px;
+margin-top:20px;
+}
+
+.heart{
+font-size:35px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.heart:hover{
+transform:scale(1.2);
+}
+
+.message{
+margin-top:20px;
+font-size:18px;
+color:#ff4d6d;
+font-weight:bold;
+}
+
+.final p{
+white-space:pre-line;
+line-height:1.8;
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+</style>
+</head>
+
+<body>
+
+<!-- PASSWORD PAGE -->
+<div class="card" id="loginPage">
+<h1>❤️ Happyy 2 yearss ❤️</h1>
+<p>Enter Password</p>
+
+<input type="password" id="password"
+style="padding:10px;border-radius:10px;border:1px solid #ccc;">
+
+<br>
+
+<button onclick="checkPassword()">Open</button>
+</div>
+
+<!-- LETTER PAGE -->
+<div class="card hidden" id="letterPage">
+
+<h1>For Ayann❤️</h1>
+
+<div class="letter">
+
+Meri Jaan ❤️
+
+I honestly don't know where to start because there are so many things I want to say.
+
+Thank you for being part of my life.
+
+Thank you for every smile you gave me, every laugh we shared, every memory we created together.
+
+You make ordinary days feel special and special days feel magical.
+
+No matter how many people I meet, no one could ever take your place.
+
+You are one of the most beautiful parts of my life.
+
+I love your smile, your voice, your kindness, your little habits and everything that makes you YOU.
+
+Thank you for staying, understanding me, supporting me and making life brighter.
+
+I hope this anniversary is just another beautiful chapter in our story.
+
+And I hope there are many more memories waiting for us ahead.
+
+At the end thankyouu❤️
+
+</div>
+
+<button onclick="openSurprise()">
+🎁 Open Surprise
+</button>
+
+</div>
+
+<!-- HEART PAGE -->
+<div class="card hidden" id="surprisePage">
+
+<h1>❤️ Click the Hearts ❤️</h1>
+
+<div class="hearts">
+
+<div class="heart" onclick="showMessage(0)">❤️</div>
+<div class="heart" onclick="showMessage(1)">❤️</div>
+<div class="heart" onclick="showMessage(2)">❤️</div>
+<div class="heart" onclick="showMessage(3)">❤️</div>
+<div class="heart" onclick="showMessage(4)">❤️</div>
+
+</div>
+
+<div class="message" id="messageBox"></div>
+
+<button onclick="openSong()">
+🎵 Next Surprise
+</button>
+
+</div>
+
+<!-- SONG PAGE -->
+<div class="card hidden" id="songPage">
+
+<h1>🎵 Our Song 🎵</h1>
+
+<p>
+Every time I hear this song,
+it reminds me of you ❤️
+</p>
+
+<h2>Lae Dooba ❤️</h2>
+
+<button onclick="openFinal()">
+❤️ Final Message
+</button>
+
+</div>
+
+<!-- FINAL PAGE -->
+<div class="card hidden" id="finalPage">
+
+<div class="final">
+
+<h1>❤️ END ❤️</h1>
+
+<p>
+Thank You.
+
+For every smile,
+every memory,
+every conversation,
+and every moment.
+
+I just want you to know that I am really, really proud of you.
+
+Proud of the person you are.
+Proud of how hard you try.
+Proud of how you keep going even when things get difficult.
+
+No matter what happens,
+I will always be your biggest cheerleader.
+
+❤️
+</p>
+
+<p style="font-size:24px;">
+❤️ Thank You ❤️
+</p>
+
+</div>
+
+</div>
+
+<script>
+
+function checkPassword(){
+let pass=document.getElementById("password").value;
+
+if(pass==="180624"){
+document.getElementById("loginPage").classList.add("hidden");
+document.getElementById("letterPage").classList.remove("hidden");
+}
+else{
+alert("Wrong Password ❤️");
+}
+}
+
+function openSurprise(){
+document.getElementById("letterPage").classList.add("hidden");
+document.getElementById("surprisePage").classList.remove("hidden");
+}
+
+const messages=[
+"You are my favorite person ❤️",
+"You make every day brighter ✨",
+"I am lucky to have you ❤️",
+"You mean the world to me 🌍",
+"Happy 2 yearss bachuuu ❤️"
+];
+
+function showMessage(index){
+document.getElementById("messageBox").innerText=messages[index];
+}
+
+function openSong(){
+document.getElementById("surprisePage").classList.add("hidden");
+document.getElementById("songPage").classList.remove("hidden");
+}
+
+function openFinal(){
+document.getElementById("songPage").classList.add("hidden");
+document.getElementById("finalPage").classList.remove("hidden");
+}
+
+</script>
+
+</body>
+</html>
+```
